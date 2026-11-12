@@ -5,8 +5,8 @@
  *      Author: gapelaez
  */
 
-#include "uart.h"
-#include "Timer.h"
+#include "../include/uart.h"
+#include "../../sensors/include/Timer.h"
 #include <stdlib.h>
 
 char blocking_str_buf[21];

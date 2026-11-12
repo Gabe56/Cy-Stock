@@ -13,7 +13,7 @@
 //The buttons are on PORTE 3:0
 // GPIO_PORTE_DATA_R -- Name of the memory mapped register for GPIO Port E, 
 // which is connected to the push buttons
-#include "button.h"
+#include "../include/button.h"
 
 // Global varibles
 volatile int button_event;

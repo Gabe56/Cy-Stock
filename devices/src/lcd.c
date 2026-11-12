@@ -11,7 +11,7 @@
 
 
 
-#include "lcd.h"
+#include "../include/lcd.h"
 
 #define BIT0		0x01
 #define BIT1		0x02

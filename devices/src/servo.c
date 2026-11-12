@@ -4,11 +4,11 @@
  *  Created on: Nov 4, 2026
  *      Author: gapelaez
  */
-#include "servo.h"
+#include "../include/servo.h"
 #include <inc/tm4c123gh6pm.h>
-#include "timer.h"
-#include "lcd.h"
-#include "button.h"
+#include "../../sensors/include/Timer.h"
+#include "../include/lcd.h"
+#include "../include/button.h"
 
 // for bot 24 (cursed)
 // 180 degrees: TBMATCHR = 73500

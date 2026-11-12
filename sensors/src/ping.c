@@ -5,10 +5,9 @@
  *      Author: gapelaez
  */
 
-#include "timer.h"
+#include "../include/Timer.h"
 #include <inc/tm4c123gh6pm.h>
-#include "ping.h"
-#include "lcd.h"
+#include "../include/ping.h"
 #define WAIT_TIME 8.0
 #define cyc_per_sec 16000000.0
 

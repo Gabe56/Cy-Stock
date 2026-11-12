@@ -4,15 +4,15 @@
  *  Created on: Oct 21, 2026
  *      Author: gapelaez
  */
-#include "ir.h"
-#include "timer.h"
+#include "../include/ir.h"
+#include "../include/Timer.h"
 #include <stdint.h>
 #include <inc/tm4c123gh6pm.h>
-#include "uart.h"
-#include "lcd.h"
-#include "button.h"
-#include "math.h"
-#include "servo.h"
+#include "../../devices/include/uart.h"
+#include "../../devices/include/lcd.h"
+#include "../../devices/include/button.h"
+#include <math.h>
+#include "../../devices/include/servo.h"
 
 #define A 124.99317
 #define B -0.00182458
