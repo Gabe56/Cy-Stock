@@ -7,7 +7,7 @@
 
 #ifndef SCANNING_H_
 #define SCANNING_H_
-#include "../include/movement.h"
+#include "movement.h"
 
 
 #endif /* SCANNING_H_ */

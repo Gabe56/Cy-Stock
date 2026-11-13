@@ -5,12 +5,12 @@
  *      Author: gapelaez
  */
 
-#include "../../sensors/include/ir.h"
-#include "../../devices/include/servo.h"
-#include "../../sensors/include/ping.h"
-#include "../../lib/include/movement.h"
-#include "../../devices/include/lcd.h"
-#include "../include/scanning.h"
+#include "devices/include/ir.h"
+#include "devices/include/servo.h"
+#include "devices/include/ping.h"
+#include "movement.h"
+#include "devices/include/lcd.h"
+#include "scanning.h"
 #include <stdint.h>
 #include <math.h>
 

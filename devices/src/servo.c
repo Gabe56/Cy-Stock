@@ -6,7 +6,7 @@
  */
 #include "../include/servo.h"
 #include <inc/tm4c123gh6pm.h>
-#include "../../sensors/include/Timer.h"
+#include "../include/Timer.h"
 #include "../include/lcd.h"
 #include "../include/button.h"
 

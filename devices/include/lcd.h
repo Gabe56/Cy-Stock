@@ -15,7 +15,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <inc/tm4c123gh6pm.h>
-#include "../../sensors/include/Timer.h"
+#include "Timer.h"
 
 /// Extra function for the stepper motor board
 uint8_t lcd_reverseNibble(uint8_t x);

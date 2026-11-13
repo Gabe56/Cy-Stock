@@ -8,11 +8,11 @@
 #include "../include/Timer.h"
 #include <stdint.h>
 #include <inc/tm4c123gh6pm.h>
-#include "../../devices/include/uart.h"
-#include "../../devices/include/lcd.h"
-#include "../../devices/include/button.h"
+#include "../include/uart.h"
+#include "../include/lcd.h"
+#include "../include/button.h"
 #include <math.h>
-#include "../../devices/include/servo.h"
+#include "../include/servo.h"
 
 #define A 124.99317
 #define B -0.00182458

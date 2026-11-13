@@ -5,9 +5,9 @@
  *      Author: gapelaez
  */
 
-#include "../include/movement.h"
-#include "../../sensors/include/Timer.h"
-#include "../../devices/include/uart.h"
+#include "movement.h"
+#include "devices/include/Timer.h"
+#include "devices/include/uart.h"
 
 #define TURN_K 2.0
 #define TURN_D 0

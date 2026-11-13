@@ -6,7 +6,7 @@
  */
 
 #include "../include/uart.h"
-#include "../../sensors/include/Timer.h"
+#include "../include/Timer.h"
 #include <stdlib.h>
 
 char blocking_str_buf[21];
