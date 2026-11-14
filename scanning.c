@@ -5,11 +5,11 @@
  *      Author: gapelaez
  */
 
-#include <ir.h>
-#include "servo.h"
-#include "ping.h"
+#include "devices/include/ir.h"
+#include "devices/include/servo.h"
+#include "devices/include/ping.h"
 #include "movement.h"
-#include "lcd.h"
+#include "devices/include/lcd.h"
 #include "scanning.h"
 #include <stdint.h>
 #include <math.h>

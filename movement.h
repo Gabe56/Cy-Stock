@@ -7,7 +7,7 @@
 
 #ifndef MOVEMENT_H_
 #define MOVEMENT_H_
-#include "open_interface.h"
+#include "devices/include/open_interface.h"
 
 typedef struct Action {
     int isTurn;

@@ -6,10 +6,8 @@
  */
 
 #include "movement.h"
-#include "Timer.h"
-#include "math.h"
-#include <math.h>
-#include "uart.h"
+#include "devices/include/Timer.h"
+#include "devices/include/uart.h"
 
 #define TURN_K 2.0
 #define TURN_D 0
