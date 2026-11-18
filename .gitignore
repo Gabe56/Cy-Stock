@@ -1,3 +1,15 @@
 .ccs-temp
 .vscode
+.jxbrowser.userdata
 TivaWare_C_Series-2.2.0.295
+.launches
+.metadata
+.settings
+RemoteSystemsTempFiles
+Debug
+targetConfigs
+.project
+.ccsproject
+.cproject
+tm4c123gh6pm_startup_ccs.c
+tm4c123gh6pm.cmd
