@@ -10,12 +10,12 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./Simple-CyBot-echo.obj" \
 "./Timer.obj" \
 "./button.obj" \
+"./cliff.obj" \
 "./ir.obj" \
-"./lab_11.obj" \
 "./lcd.obj" \
+"./main.obj" \
 "./movement.obj" \
 "./open_interface.obj" \
 "./ping.obj" \
@@ -133,29 +133,29 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-lab_11.out 
+Cy-Stock.out 
 
 EXE_OUTPUTS__QUOTED += \
-"lab_11.out" 
+"Cy-Stock.out" 
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "lab_11.out"
+	@$(MAKE) --no-print-directory -Onone "Cy-Stock.out"
 
 # Tool invocations
-lab_11.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Cy-Stock.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_11.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_11_linkInfo.xml" --rom_model -o "lab_11.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Cy-Stock.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Cy-Stock_linkInfo.xml" --rom_model -o "Cy-Stock.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Simple-CyBot-echo.obj" "Timer.obj" "button.obj" "ir.obj" "lab_11.obj" "lcd.obj" "movement.obj" "open_interface.obj" "ping.obj" "scanning.obj" "servo.obj" "tm4c123gh6pm_startup_ccs.obj" "uart.obj" 
-	-$(RM) "Simple-CyBot-echo.d" "Timer.d" "button.d" "ir.d" "lab_11.d" "lcd.d" "movement.d" "open_interface.d" "ping.d" "scanning.d" "servo.d" "tm4c123gh6pm_startup_ccs.d" "uart.d" 
+	-$(RM) "Timer.obj" "button.obj" "cliff.obj" "ir.obj" "lcd.obj" "main.obj" "movement.obj" "open_interface.obj" "ping.obj" "scanning.obj" "servo.obj" "tm4c123gh6pm_startup_ccs.obj" "uart.obj" 
+	-$(RM) "Timer.d" "button.d" "cliff.d" "ir.d" "lcd.d" "main.d" "movement.d" "open_interface.d" "ping.d" "scanning.d" "servo.d" "tm4c123gh6pm_startup_ccs.d" "uart.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
