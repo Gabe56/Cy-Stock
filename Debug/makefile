@@ -12,8 +12,10 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./Timer.obj" \
 "./button.obj" \
+"./cliff.obj" \
 "./ir.obj" \
 "./lcd.obj" \
+"./main.obj" \
 "./movement.obj" \
 "./open_interface.obj" \
 "./ping.obj" \
@@ -152,8 +154,8 @@ Cy-Stock.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Timer.obj" "button.obj" "ir.obj" "lcd.obj" "movement.obj" "open_interface.obj" "ping.obj" "scanning.obj" "servo.obj" "tm4c123gh6pm_startup_ccs.obj" "uart.obj" 
-	-$(RM) "Timer.d" "button.d" "ir.d" "lcd.d" "movement.d" "open_interface.d" "ping.d" "scanning.d" "servo.d" "tm4c123gh6pm_startup_ccs.d" "uart.d" 
+	-$(RM) "Timer.obj" "button.obj" "cliff.obj" "ir.obj" "lcd.obj" "main.obj" "movement.obj" "open_interface.obj" "ping.obj" "scanning.obj" "servo.obj" "tm4c123gh6pm_startup_ccs.obj" "uart.obj" 
+	-$(RM) "Timer.d" "button.d" "cliff.d" "ir.d" "lcd.d" "main.d" "movement.d" "open_interface.d" "ping.d" "scanning.d" "servo.d" "tm4c123gh6pm_startup_ccs.d" "uart.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

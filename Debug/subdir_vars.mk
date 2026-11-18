@@ -11,8 +11,10 @@ CMD_SRCS += \
 C_SRCS += \
 ../Timer.c \
 ../button.c \
+../cliff.c \
 ../ir.c \
 ../lcd.c \
+../main.c \
 ../movement.c \
 ../open_interface.c \
 ../ping.c \
@@ -24,8 +26,10 @@ C_SRCS += \
 C_DEPS += \
 ./Timer.d \
 ./button.d \
+./cliff.d \
 ./ir.d \
 ./lcd.d \
+./main.d \
 ./movement.d \
 ./open_interface.d \
 ./ping.d \
@@ -37,8 +41,10 @@ C_DEPS += \
 OBJS += \
 ./Timer.obj \
 ./button.obj \
+./cliff.obj \
 ./ir.obj \
 ./lcd.obj \
+./main.obj \
 ./movement.obj \
 ./open_interface.obj \
 ./ping.obj \
@@ -50,8 +56,10 @@ OBJS += \
 OBJS__QUOTED += \
 "Timer.obj" \
 "button.obj" \
+"cliff.obj" \
 "ir.obj" \
 "lcd.obj" \
+"main.obj" \
 "movement.obj" \
 "open_interface.obj" \
 "ping.obj" \
@@ -63,8 +71,10 @@ OBJS__QUOTED += \
 C_DEPS__QUOTED += \
 "Timer.d" \
 "button.d" \
+"cliff.d" \
 "ir.d" \
 "lcd.d" \
+"main.d" \
 "movement.d" \
 "open_interface.d" \
 "ping.d" \
@@ -76,8 +86,10 @@ C_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../Timer.c" \
 "../button.c" \
+"../cliff.c" \
 "../ir.c" \
 "../lcd.c" \
+"../main.c" \
 "../movement.c" \
 "../open_interface.c" \
 "../ping.c" \
