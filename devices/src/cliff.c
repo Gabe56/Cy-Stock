@@ -1,5 +1,5 @@
-#include "cliff.h"
-#include "lcd.h"
+#include "../include/cliff.h"
+#include "../include/lcd.h"
 
 int cliff_f_r;
 int cliff_r;
