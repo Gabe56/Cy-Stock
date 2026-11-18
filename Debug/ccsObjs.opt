@@ -1,8 +1,6 @@
-"./Simple-CyBot-echo.obj"
 "./Timer.obj"
 "./button.obj"
 "./ir.obj"
-"./lab_11.obj"
 "./lcd.obj"
 "./movement.obj"
 "./open_interface.obj"
