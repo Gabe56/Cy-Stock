@@ -1,7 +1,7 @@
 # FIXED
 
 scanning.obj: ../scanning.c
-scanning.obj: U:/CPRE288/lab_11/ir.h
+scanning.obj: U:/CPRE288/Cy-Stock/ir.h
 scanning.obj: ../servo.h
 scanning.obj: ../ping.h
 scanning.obj: ../movement.h
@@ -33,7 +33,7 @@ scanning.obj: ../scanning.h
 
 ../scanning.c:
 
-U:/CPRE288/lab_11/ir.h:
+U:/CPRE288/Cy-Stock/ir.h:
 
 ../servo.h:
 
