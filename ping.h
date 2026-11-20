@@ -12,5 +12,6 @@
 
 #endif /* PING_H_ */
 
-void ping_init_q();
-int ping_send(int* cycles, float* dist);
+void ping_init();
+float ping_send();
+void ping_calibrate();
