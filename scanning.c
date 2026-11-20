@@ -23,7 +23,6 @@
 
 float scan_data_IR[91];
 char str[50];
-int do_IR = 0;
 
 
 int smallest_width = 180;
@@ -170,7 +169,7 @@ void do_scan(void) {
 //    }
 }
 
-void plot_data(int size) {
+void scanning_plot_data(int size) {
     int i = 0;
     while(i < size) {
         sprintf(str, "%d\t%.1f", i * 2, scan_data_IR[i]);
@@ -186,6 +185,39 @@ void guidance_print(int moved_dist, int moved_angle) {
     uart_send_str(str);
 }
 
-void do_ir_dist() {
-    do_IR = 1;
+void scanning_arrcopy(float src[], float dest[], float start, float end) {
+    int i;
+    for (i = start; i < end; i++) {
+        dest[i] = src[i];
+    }
+}
+void scanning_median_filter(float data[], int length, int window_length) {
+    float return_data[length];
+    scanning_arrcopy(data, return_data, 0, length);
+
+    int i;
+    for(i = window_length / 2; i < length - window_length / 2; i++ ) {
+        int window_front = i + window_length / 2;
+        int window_back = i - window_length / 2;
+
+        float window[window_length];
+        scanning_arrcopy(data, window, window_back, window_front + 1);
+        float median = window[window_length / 2];
+        return_data[i] = median;
+    }
+    scanning_arrcopy(return_data, data, 0, length);
+}
+void scanning_raw_scan() {
+    lcd_printf("scanning...");
+    int i;
+    for(i = 0; i <= 180; i += 2) {
+        servo_move(i);
+        float dist_ir = ir_read();
+        scan_data_IR[i / 2] = dist_ir;
+    }
+}
+
+void scanning_clean_scan() {
+    scanning_raw_scan();
+    scanning_median_filter(scan_data_IR, sizeof(scan_data_IR) / sizeof(float), 5);
 }
