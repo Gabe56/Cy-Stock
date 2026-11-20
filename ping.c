@@ -35,7 +35,7 @@ void ping_int() {
     }
 }
 // init ping sensor
-void ping_init_q() {
+void ping_init() {
     SYSCTL_RCGCGPIO_R |= 0x2; //portb clock
     SYSCTL_RCGCTIMER_R |= 0x8; // timer 3 clock enable
     timer_waitMillis(1);
@@ -57,14 +57,25 @@ void ping_init_q() {
     IntRegister(INT_TIMER3B, ping_int); //enable in nvic
 }
 
-float calc_distance(int cycles) {
+void ping_calibrate() {
+    ping_init();
+    lcd_init();
+    while(1) {
+        float distance = ping_send();
+        char str[50];
+        sprintf(str, "distance: %.1f", distance);
+        lcd_printf(str);
+    }
+}
+
+float ping_distance(int cycles) {
     float millis = ((float)cycles / cyc_per_sec) * 1000.0; //convert to millis from cc
 
     float dist = (millis * 340.0) / 20.0; //only divide by 20 as we are in milliseconds and we need to get to m
     return dist;
 }
 
-void send_pulse() {
+void ping_send_pulse() {
 //    TIMER3_TBILR_R = 0xFFFF; // set starting point
 //    TIMER3_TBPR_R |= 0xFF; // set pre-scalar
     GPIO_PORTB_DIR_R |= 0x8; //out dirction
@@ -74,10 +85,10 @@ void send_pulse() {
     GPIO_PORTB_DIR_R &= 0x7; // back to input
 }
 
-int ping_send(int* cycles, float* dist) {
+float ping_send() {
     GPIO_PORTB_AFSEL_R &= 0x7; //disable afsel
     TIMER3_IMR_R &= 0xBFF;  //disable interrupts
-    send_pulse();
+    ping_send_pulse();
 
     //reconfig for recieve
     GPIO_PORTB_AFSEL_R |= 0x8; //enable afsel
@@ -86,11 +97,7 @@ int ping_send(int* cycles, float* dist) {
 
     while(!new_ping) {}
     new_ping = 0;
-    float distance = calc_distance(ping_length); //convert to cm
-    *cycles = ping_length;
-    *dist = distance;
-
-    if(ping_length < 0) return 1;
-    return 0;
+    float distance = ping_distance(ping_length); //convert to cm
+    return distance;
 }
 
