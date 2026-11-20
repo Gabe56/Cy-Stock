@@ -14,5 +14,4 @@
 
 void servo_init();
 void servo_move(int degrees);
-int servo_conversion(int value);
 void servo_calibrate();

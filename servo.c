@@ -132,13 +132,7 @@ void servo_calibrate() {
 
 void servo_move(int degrees) {
     // cap values
-    if (degrees < 0){
-        degrees = 0;
-    }
-    if (degrees > 180){
-        degrees = 180;
-    }
-
+    degress = fmax(0, fmin(degrees, 180)); // ensure degrees is between 0 and 180
     //linear formula for servo value
     int move = servo_0 + ((servo_180 - servo_0) * degrees) / 180;
 
@@ -146,7 +140,7 @@ void servo_move(int degrees) {
     TIMER1_TBMATCHR_R &= 0x00000000;
     TIMER1_TBMATCHR_R = move;
     TIMER1_CTL_R |= 0x100;
-    timer_waitMillis(250);
+    timer_waitMillis(10);
 }
 
 
