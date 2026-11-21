@@ -23,10 +23,9 @@ extern volatile int button_num;
 char str[50];
 
 // insertion sort implementation
-void ir_sort(int data[], int data_size) {
+void ir_sort(int data[], int data_length) {
     int i;
-    int length = data_size / sizeof(int);
-    for(i = 0; i < length; i++) {
+    for(i = 0; i < data_length; i++) {
         int curr_elem = data[i];
         int k;
         for(k = i - 1; k >= 0 && data[k] > curr_elem; k--) {
@@ -39,6 +38,8 @@ void ir_sort(int data[], int data_size) {
 void ir_calibrate() {
     button_init();
     init_button_interrupts(); //using buttons
+    lcd_init();
+    ir_init();
     while(1) {
         if(button_event) {
             button_event = 0;
@@ -80,7 +81,7 @@ int ir_raw() {
     for(i = 0; i < IR_SAMPLE_TIMES; i++) {
         data[i] = ADC0_SSFIFO0_R;
     }
-    ir_sort(data, sizeof(data)); // sort the array
+    ir_sort(data, sizeof(data) / sizeof(int)); // sort the array
     int median_data = data[IR_SAMPLE_TIMES / 2]; // return the middle index (median)
     return median_data;
 }

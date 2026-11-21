@@ -38,7 +38,6 @@ void ping_int() {
 void ping_init() {
     SYSCTL_RCGCGPIO_R |= 0x2; //portb clock
     SYSCTL_RCGCTIMER_R |= 0x8; // timer 3 clock enable
-    timer_waitMillis(1);
 
     GPIO_PORTB_DEN_R |= 0x8; //enable pin3
     GPIO_PORTB_DIR_R |= 0x8; //out dir

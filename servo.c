@@ -9,6 +9,7 @@
 #include "timer.h"
 #include "lcd.h"
 #include "button.h"
+#include <math.h>
 
 // for bot 24 (cursed)
 // 180 degrees: TBMATCHR = 73500
@@ -132,7 +133,7 @@ void servo_calibrate() {
 
 void servo_move(int degrees) {
     // cap values
-    degress = fmax(0, fmin(degrees, 180)); // ensure degrees is between 0 and 180
+    degrees = fmax(0, fmin(degrees, 180)); // ensure degrees is between 0 and 180
     //linear formula for servo value
     int move = servo_0 + ((servo_180 - servo_0) * degrees) / 180;
 
@@ -140,7 +141,7 @@ void servo_move(int degrees) {
     TIMER1_TBMATCHR_R &= 0x00000000;
     TIMER1_TBMATCHR_R = move;
     TIMER1_CTL_R |= 0x100;
-    timer_waitMillis(10);
+    timer_waitMillis(75);
 }
 
 

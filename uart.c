@@ -143,6 +143,7 @@ void uart_send_str(char* str) {
     }
     // send newline char to complete
     uart_send('\n');
+    uart_send('\r');
 //    uart_send('\0');
 }
 
